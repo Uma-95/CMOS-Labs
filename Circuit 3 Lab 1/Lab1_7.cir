@@ -1,0 +1,11 @@
+***DC Analysis
+vin 2 0 5.0
+ r1 2 1 1.2k
+ c1 1 0 0.1u
+ l1 1 0 100m
+.dc vin 0.0 5.0 0.1
+.control
+ run
+ plot v(1) v(2)
+.endc
+.end

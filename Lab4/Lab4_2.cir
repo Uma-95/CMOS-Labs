@@ -1,0 +1,25 @@
+***ABC+D
+ v1 1 0 dc 5
+ v2 2 0 dc 5
+ v3 3 0 dc 5
+ v4 4 0 dc 5
+ vd 9 0 dc 5
+.model nmod nmos level=54 version=4.7
+.model pmod pmos level=54 version=4.7
+
+ m1n 5 1 0 0 nmod w=100u l=10u
+ m2n 6 2 5 5 nmod w=100u l=10u
+ m3n 7 3 6 6 nmod w=100u l=10u
+ m4n 7 4 0 0 nmod w=100u l=10u
+
+ m1p 8 1 9 9 pmod w=100u l=10u
+ m2p 8 2 9 9 pmod w=100u l=10u
+ m3p 8 3 9 9 pmod w=100u l=10u
+ m4p 7 4 8 8 pmod w=100u l=10u
+
+.tran 0.1m 100m
+.control
+ run
+ plot V(7)    
+.endc
+.end

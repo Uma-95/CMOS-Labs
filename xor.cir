@@ -1,0 +1,36 @@
+
+***ALU
+.subckt inverter 11 12 13
+M1 13 11 12 12 pmod w=100u l=10u
+M2 13 11 0 0 nmod w=100u l=10u
+.model nmod nmos version=54 level=4.7
+.model pmod pmos version=54 level=4.7
+.ends
+
+Va 2 0 dc 5 
+Vb 3 0 dc 0
+Vdd 1 0 dc 5V 
+Xb 3 1 5 inverter
+Xa 2 1 4 inverter
+.model nmod nmos version=54 level=4.7
+.model pmod pmos version=54 level=4.7
+M1 6 5 0 0 nmod w=100u l=10u
+M2 8 2 6 6 nmod w=100u l=10u
+M3 8 4 7 7 nmod w=100u l=10u
+M4 7 3 0 0 nmod w=100u l=10u
+M5 8 2 9 9 pmod w=100u l=10u
+M6 8 5 9 9 pmod w=100u l=10u
+M7 9 4 1 1 pmod w=100u l=10u
+M8 9 3 1 1 pmod w=100u l=10u
+
+M9 10 8 1 1 pmod w=100u l=10u
+M10 10 8 0 0 nmod w=100u l=10u
+
+
+
+.tran 0.1m 20m
+.control
+run
+plot V(10)V(8)
+.endc
+.end

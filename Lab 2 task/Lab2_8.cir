@@ -1,0 +1,12 @@
+***NMOS characteristics
+ vg 1 0 dc 2
+ vd 3 0 dc 2.5
+ v1 3 2 dc 0
+.model nmod nmos level=54 version=4.7
+ m1 2 1 0 0 nmod w=100u l=10u
+.dc vd 0.0 10 0.1 
+.control
+ run
+ plot i(v1)
+.endc
+.end

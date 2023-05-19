@@ -1,0 +1,13 @@
+***characteristics of CMOS
+ vg 1 0 pulse (0 5 0 0 0 10m 20m)
+ vd 2 0 dc 5
+.model nmod nmos level=54 version=4.7
+.model pmod pmos level=54 version=4.7
+ m1 3 1 0 0 nmod w=100u l=10u
+ m2 3 1 2 2 pmod w=100u l=10u
+.tran 0.1m 100m
+.control
+ run
+ plot v(1) v(3)   
+.endc
+.end

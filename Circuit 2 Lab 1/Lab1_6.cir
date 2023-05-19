@@ -1,0 +1,10 @@
+***Transient Analysis
+vin 1 0 pulse(0 5 0 0 0 100ms 200ms)
+ r1 1 2 6k
+ c1 2 0 18u
+.tran 0.2ms 1000ms
+.control
+ run
+ plot v(1) v(2)
+.endc
+.end
